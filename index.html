@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stage one</title>
+  </head>
+  <body>
+    <div data-testid="slackUserName">nelima mugo</div>
+    <div data-testid="slackDisplayImage">
+      <img style="height: 50px;" src="./Eo_circle_light-blue_white_letter-n.svg.png" alt="nelima mugo">
+    </div>
+    <div data-testid="currentDayOfTheWeek"></div>
+    <div data-testid="currentUTCTime"></div>
+    <div data-testid="myTrack">FRONT-END TRACK</div>
+    <a data-testid="githubURL" href=""></a>
+    <script>
+      let utcTime = ()=>{
+        let utcTimestamp = new Date().getTime();
+        return utcTimestamp;
+      }
+      let t = setInterval(utcTimer, 1000);
+      function utcTimer() {
+        let displayUTCTime = document.querySelector('[data-testid="currentUTCTime"]');
+        displayUTCTime.innerHTML = "Current UTC Time: " + utcTime();
+      }
+      
+
+      let daysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      let day = ()=>{
+        let d = new Date();
+        let today = d.getDay();
+        return daysArray[today];
+      }
+      let displayDay = document.querySelector('[data-testid="currentDayOfTheWeek"');
+      displayDay.innerHTML = "Day of the Week: " + day();
+    </script>
+  </body>
+</html>
