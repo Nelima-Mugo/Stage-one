@@ -20,7 +20,7 @@
       let t = setInterval(utcTimer, 1000);
       function utcTimer() {
         let displayUTCTime = document.querySelector('[data-testid="currentUTCTime"]');
-        displayUTCTime.innerHTML = "Current UTC Time: " + utcTime();
+        displayUTCTime.innerHTML = utcTime();
       }
       
 
@@ -31,7 +31,7 @@
         return daysArray[today];
       }
       let displayDay = document.querySelector('[data-testid="currentDayOfTheWeek"');
-      displayDay.innerHTML = "Day of the Week: " + day();
+      displayDay.innerHTML = day();
     </script>
   </body>
 </html>
